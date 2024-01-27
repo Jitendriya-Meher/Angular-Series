@@ -1,0 +1,60 @@
+<nav>
+
+  <img src="../favicon.ico" alt="logo">
+
+  <ul>
+    <li (click)="currpage='home'">
+      Home
+    </li>
+    <li (click)="currpage='about'">
+      About
+    </li>
+  </ul>
+
+</nav>
+
+<hr>
+
+<p>{{currpage}}</p>
+
+<!-- <app-homepage *ngIf="currpage=='home' else elsepage"></app-homepage>
+<app-aboutpage *ngIf="currpage=='about'"></app-aboutpage>
+
+<ng-template #elsepage>
+ <app-aboutpage></app-aboutpage>
+</ng-template> -->
+
+
+
+<!-- <ng-template [ngIf]="currpage=='home'">
+  <app-homepage></app-homepage>
+</ng-template>
+
+<ng-template [ngIf]="currpage=='about'">
+  <app-aboutpage></app-aboutpage>
+</ng-template> -->
+
+
+
+<ng-template *ngIf="currpage=='home' then gotohome else gotoabout"></ng-template>
+
+<!-- <ng-template *ngIf="currpage=='home' ? gotohome : gotoabout"></ng-template> -->
+
+<ng-template #gotohome>
+  <app-homepage></app-homepage>
+</ng-template>
+<ng-template #gotoabout>
+  <app-aboutpage></app-aboutpage>
+</ng-template>
+
+<p [hidden]="currpage!='home'">
+  hello. i am only visible to home pages.
+</p>
+
+<div class="" [ngSwitch]="currpage">
+  <app-homepage *ngSwitchCase="'home'"></app-homepage>
+  <app-aboutpage *ngSwitchCase="'about'"></app-aboutpage>
+  <p *ngSwitchDefault>
+    dummy defalut page
+  </p>
+</div>
