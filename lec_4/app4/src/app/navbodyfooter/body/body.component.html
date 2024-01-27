@@ -1,0 +1,32 @@
+<p>body works!</p>
+
+<div class="mycontainer">
+    <p class="mytext">
+        {{clickstatus}}
+    </p>
+    <button class="mybtn" (click)="btnClick()">
+        Don't click me
+    </button>
+    <button class="mybtn" (click)="btnClickdec()">
+        Click me
+    </button>
+    <button class="mybtn" (click)="restart()">
+        set to 0
+    </button>
+
+    <br>
+    <hr>
+    <br>
+
+    <input type="text"
+    placeholder="Type to calculate..."
+    #box
+    [disabled]="boxDisabled"
+    class="myinput"
+    (keyup.enter)="calcValue(box.value)">
+
+    <div class="result">
+        Result : {{result}}
+    </div>
+
+</div>

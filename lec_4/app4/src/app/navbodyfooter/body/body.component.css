@@ -1,0 +1,38 @@
+.mycontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mytext{
+    font-size: 80px;
+    font-family: cursive;
+    color: gray;
+}
+
+.mybtn{
+    background-color: aquamarine;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.mybtn:hover{
+    background-color: aqua;
+    color: goldenrod;
+}
+
+.myinput{
+    font-size: 20px;
+    padding: 10px;
+    width: 50%;
+}
+
+.result{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 8px;
+}
