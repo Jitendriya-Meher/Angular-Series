@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let user of userPost">
+    
+    <div class="card">
+
+      <div class="section-1">
+        <img src={{user.thumbnailUrl}} alt="">
+        <p>{{user.title}}</p>
+      </div>
+
+      <img src={{user.url}} class="post" alt="">
+
+    </div>
+
+  </li>
+</ul>
