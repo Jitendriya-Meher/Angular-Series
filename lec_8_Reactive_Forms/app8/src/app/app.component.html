@@ -1,0 +1,37 @@
+
+<h1>
+  Log In Form 
+</h1>
+
+<form 
+[formGroup]="loginForm" 
+(ngSubmit)="loginUser()">
+
+  <input type="text" placeholder="enter usrename"
+  formControlName="username">
+  <br>
+  <span *ngIf="loginForm.get('username')?.invalid && !loginForm.get('username')?.pristine">
+    Enter a valid email
+  </span>
+
+  <br><br>
+
+  <input type="password" placeholder="enter password"
+  formControlName="password">
+  <br>
+  <span *ngIf="loginForm.get('password')?.invalid && !loginForm.get('password')?.pristine">
+    Enter a valid password of minimum length of 6
+  </span>
+
+  <br><br>
+
+  <button type="submit"
+  [disabled]="loginForm.invalid">
+    Log In 
+  </button>
+
+</form>
+
+<h1>
+  {{str}}
+</h1>
